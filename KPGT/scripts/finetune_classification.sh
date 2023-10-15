@@ -1,0 +1,1 @@
+python finetune.py --dataset hiv --dataset_type classification --metric rocauc --cuda cuda:1 --batch_size 128 

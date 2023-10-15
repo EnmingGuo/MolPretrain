@@ -1,0 +1,1 @@
+python finetune.py --dataset qm9 --dataset_type regression --metric rmse --cuda cuda:1 --batch_size 256 --n_epochs 200
