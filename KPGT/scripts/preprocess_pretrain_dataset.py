@@ -8,7 +8,7 @@ from rdkit import Chem
 from scipy import sparse as sp
 import argparse 
 
-from src.data.descriptors.rdNormalizedDescriptors import RDKit2DNormalized
+from KPGT.src.data.descriptors.rdNormalizedDescriptors import RDKit2DNormalized
 
 def calculate_fingerprint(smiles):
     mol = Chem.MolFromSmiles(smiles)

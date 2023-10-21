@@ -11,8 +11,8 @@ from rdkit import Chem
 from scipy import sparse as sp
 import argparse 
 
-from src.data.featurizer import smiles_to_graph_tune
-from src.data.descriptors.rdNormalizedDescriptors import RDKit2DNormalized
+from KPGT.src.data.featurizer import smiles_to_graph_tune
+from KPGT.src.data.descriptors.rdNormalizedDescriptors import RDKit2DNormalized
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Arguments")

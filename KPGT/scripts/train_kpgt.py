@@ -1,7 +1,7 @@
 import sys
 sys.path.append('..')
 
-from src.utils import set_random_seed
+from KPGT.src.utils import set_random_seed
 import argparse
 import torch
 from torch.utils.data import DataLoader
@@ -9,19 +9,18 @@ from torch.optim import Adam
 from torch.nn import MSELoss, BCEWithLogitsLoss, CrossEntropyLoss
 from torch.utils.tensorboard import SummaryWriter
 from torch.utils.data.distributed import DistributedSampler
-import dgl
 import numpy as np
 import os
 import random
-from src.data.featurizer import Vocab, N_BOND_TYPES, N_ATOM_TYPES
-from src.data.pretrain_dataset import MoleculeDataset
-from src.data.collator import Collator_pretrain
-from src.model.light import LiGhTPredictor as LiGhT
-from src.trainer.scheduler import PolynomialDecayLR
-from src.trainer.pretrain_trainer import Trainer
-from src.trainer.evaluator import Evaluator
-from src.trainer.result_tracker import Result_Tracker
-from src.model_config import config_dict
+from KPGT.src.data.featurizer import Vocab, N_BOND_TYPES, N_ATOM_TYPES
+from KPGT.src.data.pretrain_dataset import MoleculeDataset
+from KPGT.src.data.collator import Collator_pretrain
+from KPGT.src.model.light import LiGhTPredictor as LiGhT
+from KPGT.src.trainer.scheduler import PolynomialDecayLR
+from KPGT.src.trainer.pretrain_trainer import Trainer
+from KPGT.src.trainer.evaluator import Evaluator
+from KPGT.src.trainer.result_tracker import Result_Tracker
+from KPGT.src.model_config import config_dict
 import warnings
 warnings.filterwarnings("ignore")
 local_rank = int(os.environ['LOCAL_RANK'])

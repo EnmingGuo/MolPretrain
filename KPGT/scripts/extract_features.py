@@ -5,12 +5,12 @@ import argparse
 
 import sys
 sys.path.append("..")
-from src.utils import set_random_seed
-from src.data.featurizer import Vocab, N_ATOM_TYPES, N_BOND_TYPES
-from src.data.finetune_dataset import MoleculeDataset
-from src.data.collator import Collator_tune
-from src.model.light import LiGhTPredictor as LiGhT
-from src.model_config import config_dict
+from KPGT.src.utils import set_random_seed
+from KPGT.src.data.featurizer import Vocab, N_ATOM_TYPES, N_BOND_TYPES
+from KPGT.src.data.finetune_dataset import MoleculeDataset
+from KPGT.src.data.collator import Collator_tune
+from KPGT.src.model.light import LiGhTPredictor as LiGhT
+from KPGT.src.model_config import config_dict
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Arguments")

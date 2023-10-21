@@ -1,21 +1,21 @@
 import sys
 sys.path.append('..')
 
-from src.utils import set_random_seed
+from KPGT.src.utils import set_random_seed
 import argparse
 import torch
 from torch import nn
 from torch.utils.data import DataLoader
 import numpy as np
 import random
-from src.data.featurizer import Vocab, N_ATOM_TYPES, N_BOND_TYPES
-from src.data.finetune_dataset import MoleculeDataset
-from src.data.collator import Collator_tune
-from src.model.light import LiGhTPredictor as LiGhT
-from src.trainer.finetune_trainer import Trainer
-from src.trainer.evaluator import Evaluator
-from src.trainer.result_tracker import Result_Tracker
-from src.model_config import config_dict
+from KPGT.src.data.featurizer import Vocab, N_ATOM_TYPES, N_BOND_TYPES
+from KPGT.src.data.finetune_dataset import MoleculeDataset
+from KPGT.src.data.collator import Collator_tune
+from KPGT.src.model.light import LiGhTPredictor as LiGhT
+from KPGT.src.trainer.finetune_trainer import Trainer
+from KPGT.src.trainer.evaluator import Evaluator
+from KPGT.src.trainer.result_tracker import Result_Tracker
+from KPGT.src.model_config import config_dict
 
 import warnings
 warnings.filterwarnings("ignore")
