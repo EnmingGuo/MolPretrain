@@ -136,19 +136,19 @@ def draw(loss, result, task_name, target, data):
         plt.plot(range(len(loss)), loss, label='Training Loss')
         xlabel = 'Epochs'
         title = f'Training Loss on task {task_name}'
-        save_path = f'./{task_name}/train_loss_{target}.png'
+        save_path = f'../../dataset/{task_name}/train_loss_{target}.png'
 
     elif data == 'valid':
         plt.plot(range(len(loss)), loss, label='Validation Loss')
         xlabel = 'Epochs'
         title = f'Validation Loss on task {task_name}'
-        save_path = f'./{task_name}/val_loss_{target}.png'
+        save_path = f'../../dataset/{task_name}/val_loss_{target}.png'
 
     elif data == 'test':
         plt.plot(range(len(loss)), loss, label='Test Loss')
         xlabel = 'Epochs'
         title = f'Test Loss on task {task_name}'
-        save_path = f'./{task_name}/test_loss_{target}.png'
+        save_path = f'../../dataset/{task_name}/test_loss_{target}.png'
 
     else:
         raise TypeError("Invalid data type")
@@ -162,14 +162,14 @@ def draw(loss, result, task_name, target, data):
     if task == 'regression':
         if task_name in ['qm7', 'qm8', 'qm9']:
             label = 'MAE'
-            save_path = f'./{task_name}/{data}_mae_{target}.png'
+            save_path = f'../../dataset/{task_name}/{data}_mae_{target}.png'
         else:
             label = 'RMSE'
-            save_path = f'./{task_name}/{data}_rmse_{target}.png'
+            save_path = f'../../dataset/{task_name}/{data}_rmse_{target}.png'
 
     elif task == 'classification':
         label = 'ROC_AUC'
-        save_path = f'./{task_name}/{data}_roc_auc_{target}.png'
+        save_path = f'../../dataset/{task_name}/{data}_roc_auc_{target}.png'
 
     plt.figure()
     plt.plot(range(len(result)), result, label=label)
@@ -233,13 +233,13 @@ if __name__ == '__main__':
     if dataset == 'bbbp':
         task = 'classification'
         task_name = 'bbbp'
-        path = '../dataset/bbbp/BBBP.csv'
+        path = '../../dataset/bbbp/bbbp.csv'
         target_list = ["p_np"]
 
     elif dataset == 'tox21':
         task = 'classification'
         task_name = 'tox21'
-        path = '../dataset/tox21/tox21.csv'
+        path = '../../dataset/tox21/tox21.csv'
         target_list = [
             "NR-AR", "NR-AR-LBD", "NR-AhR", "NR-Aromatase", "NR-ER", "NR-ER-LBD", 
             "NR-PPAR-gamma", "SR-ARE", "SR-ATAD5", "SR-HSE", "SR-MMP", "SR-p53"
@@ -248,25 +248,25 @@ if __name__ == '__main__':
     elif dataset == 'clintox':
         task = 'classification'
         task_name = 'clintox'
-        path = '../dataset/clintox/clintox.csv'
+        path = '../../dataset/clintox/clintox.csv'
         target_list = ['CT_TOX', 'FDA_APPROVED']
 
     elif dataset == 'hiv':
         task = 'classification'
         task_name = 'hiv'
-        path = '../dataset/hiv/HIV.csv'
+        path = '../../dataset/hiv/HIV.csv'
         target_list = ["HIV_active"]
 
     elif dataset == 'bace':
         task = 'classification'
         task_name = 'bace'
-        path = '../dataset/bace/bace.csv'
+        path = '../../dataset/bace/bace.csv'
         target_list = ["Class"]
 
     elif dataset == 'sider':
         task = 'classification'
         task_name = 'sider'
-        path = '../dataset/sider/sider.csv'
+        path = '../../dataset/sider/sider.csv'
         target_list = [
             "Hepatobiliary disorders", "Metabolism and nutrition disorders", "Product issues", 
             "Eye disorders", "Investigations", "Musculoskeletal and connective tissue disorders", 
@@ -286,7 +286,7 @@ if __name__ == '__main__':
     elif dataset == 'muv':
         task = 'classification'
         task_name = 'muv'
-        path = '../dataset/muv/muv.csv'
+        path = '../../dataset/muv/muv.csv'
         target_list = [
             'MUV-692', 'MUV-689', 'MUV-846', 'MUV-859', 'MUV-644', 'MUV-548', 'MUV-852',
             'MUV-600', 'MUV-810', 'MUV-712', 'MUV-737', 'MUV-858', 'MUV-713', 'MUV-733',
@@ -296,31 +296,31 @@ if __name__ == '__main__':
     elif dataset == 'freesolv':
         task = 'regression'
         task_name = 'freesolv'
-        path = '../dataset/freesolv/freesolv.csv'
+        path = '../../dataset/freesolv/freesolv.csv'
         target_list = ["expt"]
     
     elif dataset == 'esol':
         task = 'regression'
         task_name = 'esol'
-        path = '../dataset/esol/esol.csv'
+        path = '../../dataset/esol/esol.csv'
         target_list = ["measured log solubility in mols per litre"]
 
     elif dataset == 'lipo':
         task = 'regression'
         task_name = 'lipo'
-        path = '../dataset/lipophilicity/Lipophilicity.csv'
+        path = '../../dataset/lipo/lipo.csv'
         target_list = ["exp"]
     
     elif dataset == 'qm7':
         task = 'regression'
         task_name = 'qm7'
-        path = '../dataset/qm7/qm7.csv'
+        path = '../../dataset/qm7/qm7.csv'
         target_list = ["u0_atom"]
 
     elif dataset == 'qm8':
         task = 'regression'
         task_name = 'qm8'
-        path = '../dataset/qm8/qm8.csv'
+        path = '../../dataset/qm8/qm8.csv'
         target_list = [
             "E1-CC2", "E2-CC2", "f1-CC2", "f2-CC2", "E1-PBE0", "E2-PBE0", 
             "f1-PBE0", "f2-PBE0", "E1-CAM", "E2-CAM", "f1-CAM","f2-CAM"
@@ -329,7 +329,7 @@ if __name__ == '__main__':
     elif dataset == 'qm9':
         task = 'regression'
         task_name = 'qm9'
-        path = '../dataset/qm9/qm9.csv'
+        path = '../../dataset/qm9/qm9.csv'
         target_list = ['mu', 'alpha', 'homo', 'lumo', 'gap', 'r2', 'zpve', 'cv']
 
     else:
@@ -353,7 +353,8 @@ if __name__ == '__main__':
         args = args
     )
 
-    gnn.load_state_dict(torch.load('model.pth'))
+    gnn.load_state_dict(torch.load('GTN_model.pth',map_location=torch.device('cpu')))
+
 
     model = Model(gnn, task, node_dim, finetune=True)
 
@@ -517,5 +518,5 @@ if __name__ == '__main__':
 
         df = pd.DataFrame(result)
 
-        csv_file = f'./{task_name}/test_results.csv' # results saving path
+        csv_file = f'../../dataset/{task_name}/test_results.csv' # results saving path
         df.to_csv(csv_file, mode='a+', index=False)
